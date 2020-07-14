@@ -1,0 +1,15 @@
+{
+  "name": "tcog_webcomponents",
+  "version": "1.0.0",
+  "description": "Some simple webcomponents",
+  "main": "index.js",
+  "scripts": {
+    "bundle": "rollup -c"
+  },
+  "author": "TakebonCog",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^2.21.0",
+    "rollup-plugin-terser": "^6.1.0"
+  }
+}
