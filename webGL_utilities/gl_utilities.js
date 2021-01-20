@@ -121,6 +121,17 @@
 			const verts = new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1])
 			gl.bindBuffer(gl.ARRAY_BUFFER, buffer)
 			gl.bufferData(gl.ARRAY_BUFFER, verts, gl.STATIC_DRAW)
+		},
+		getType: () => {
+			let type, ext
+			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+				ext = gl.getExtension('OES_texture_half_float')
+				type = ext.HALF_FLOAT_OES
+			} else {
+				ext = gl.getExtension('OES_texture_float')
+				type = gl.FLOAT
+			}
+			return type
 		}
 	}
 })(this)
